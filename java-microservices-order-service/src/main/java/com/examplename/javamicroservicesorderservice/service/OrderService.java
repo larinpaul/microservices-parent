@@ -18,7 +18,7 @@ public class OrderService {
 
         List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtoList()
                 .stream()
-                .map(orderLineItemsDto -> mapToDto(order))
+                .map(this::mapToDto)
                 .toList();
 
         order.setOrderLineItemsList(orderLineItems);
